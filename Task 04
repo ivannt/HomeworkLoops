@@ -1,0 +1,33 @@
+/* Task 4. Write a program that calculates N!/K! for given N and K (1<K<N).*/
+
+
+using System;
+class Factorial
+{
+    static void Main()
+    {
+        Console.Title = "Factorial";
+
+        Console.Write("Enter N / N>K /: ");
+        int nNumber = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter K / K<N /: ");
+        int kNumber = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(new string('-', 22));
+        int product = 1;
+        if (kNumber < nNumber)
+        {
+            for (int i = nNumber; i > kNumber; i--)
+            {
+                product *= i;
+            }
+            Console.WriteLine("N!/K! = {0}", product);
+        }
+        else
+        {
+            Console.WriteLine("Error");/* N must be lower than K */
+        }
+        Console.WriteLine();
+    }
+}
