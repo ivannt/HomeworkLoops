@@ -1,0 +1,29 @@
+/* Task 6. Write a program that, for a given two integer numbers N and X,calculates the sumS = 1 + 1!/X + 2!/X2 + … + N!/XN */
+
+
+using System;
+class CalucaltingSumXandN
+{
+    static void Main()
+    {
+        Console.Title = "CalculateTheSum";
+
+        Console.WriteLine("Enter number N: ");
+        int nNumber = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter number X: ");
+        int xNumber = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(new string('-',22));
+        double sum = 1;
+        double nFactorial = 1;
+        double xPowered;
+        for (int i = 1; i <= nNumber; i++)
+        {
+            xPowered = (int)Math.Pow(xNumber, i);
+            nFactorial *= i;
+            sum += nFactorial / xPowered;
+        }
+        Console.WriteLine(sum + "\n\n");
+    }
+}
