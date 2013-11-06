@@ -1,0 +1,31 @@
+/* Task 9. In the combinatorial mathematics, the Catalan numbers are calculated by the following formula: 
+ * (2*n)! / (n + 1)! * n! Write a program to calculate the Nth Catalan number by given N.*/
+
+
+using System;
+class CatalanNumbers
+{
+    static void Main()
+    {
+        /* Catalan formula =  (2n)! / (n + 1)! * n!*/
+        Console.Title = "CatalanNumbers";
+
+        Console.WriteLine("Enter N number: ");
+        int nNumber = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(new string('-',22));
+        int middleProduct = 1;
+        decimal product = 1;
+        int nToOne = nNumber + 1;
+        for (int i = 2 * nNumber; i > nToOne; i--)
+        {
+            middleProduct *= i; 
+        }
+        product *= middleProduct;
+        for (int i = 1; i <= nNumber; i++)
+        {
+            product /= i; 
+        }
+        Console.WriteLine("(2n)! / (n + 1)! * n! = {0}\n\n", product);
+    }
+}
