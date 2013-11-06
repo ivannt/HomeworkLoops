@@ -1,0 +1,40 @@
+/* Task 5. Write a program that calculates N!*K! / (K-N)! for given N and K (1<N<K).*/
+
+
+using System;
+class SecondFactorial
+{
+    static void Main()
+    {
+        Console.Title = "SecondFactorial";
+
+        Console.Write("Enter N / N<K /: ");
+        int nNumber = int.Parse(Console.ReadLine());
+
+        Console.Write("Insert K / K>N /: ");
+        int kNumber = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(new string('-',22));
+        int product = 1;
+        int middleProduct = 1;
+        int NtoK = kNumber - nNumber;
+        if (kNumber > nNumber)
+        {
+            for (int i = kNumber; i > NtoK; i--)
+            {
+                middleProduct *= i;
+            }
+            product *= middleProduct;
+            for (int i = 1; i <= nNumber; i++)
+            {
+                product *= i;
+            }
+            Console.WriteLine("(N!*K!) / (K-N)! = {0}", product);
+        }
+        else
+        {
+            Console.WriteLine("Error");/* N must be bigger than K */
+        }
+        Console.WriteLine();
+    }
+}
